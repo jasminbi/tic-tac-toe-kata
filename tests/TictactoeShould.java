@@ -14,7 +14,11 @@ public class TictactoeShould {
     @Test
     public void let_X_not_win_on_empty_field() {
         //arrange (given)
-        SpielfeldStatus status = new SpielfeldStatus (emptyList());
+        SpielfeldStatus status = new SpielfeldStatus(asList(
+                '*','*','*',
+                '*','*','*',
+                '*','*','*'
+        ));
 
         //act (when)
 
@@ -24,21 +28,31 @@ public class TictactoeShould {
 
     @Test
     public void let_X_win_if_3_X_in_a_row() {
-        SpielfeldStatus status = new SpielfeldStatus(asList('X','X','X'));
+        SpielfeldStatus status = new SpielfeldStatus(asList(
+                'X','X','X',
+                '*','*','*',
+                '*','*','*'));
 
         assertTrue(status.xWins());
     }
 
     @Test
     public void let_X_not_win_if_only_one_field_is_filled() {
-        SpielfeldStatus status = new SpielfeldStatus(asList('X'));
-
+        SpielfeldStatus status = new SpielfeldStatus(asList(
+                'X','*','*',
+                '*','*','*',
+                '*','*','*'
+        ));
         assertFalse(status.xWins());
     }
 
     @Test
     public void let_X_not_win_if_only_two_fields_are_filled() {
-        SpielfeldStatus status = new SpielfeldStatus(asList('X','X'));
+        SpielfeldStatus status = new SpielfeldStatus(asList(
+                'X','X','*',
+                '*','*','*',
+                '*','*','*'
+        ));
 
         assertFalse(status.xWins());
     }

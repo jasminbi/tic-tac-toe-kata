@@ -3,10 +3,10 @@ import java.util.List;
 public class SpielfeldStatus {
 
 
-    private final List<Object> fields;
+    private final List<Character> fields;
 
 
-    public SpielfeldStatus(List<Object> fields) {
+    public SpielfeldStatus(List<Character> fields) {
 
         this.fields = fields;
     }
@@ -14,10 +14,19 @@ public class SpielfeldStatus {
 
     //Methoden
     public boolean xWins() {
-        if (!fields.contains('X')) {
-            return false;
+        int countX = 0;
+        for (Character field : fields) {
+            if (field.equals('X')) {
+                countX += 1;
+            }
+
         }
-        return fields.size() > 2;
+
+        return countX > 2;
+
+
     }
+
+
 
 }

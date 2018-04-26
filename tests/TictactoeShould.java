@@ -30,8 +30,15 @@ public class TictactoeShould {
     }
 
     @Test
-    public void let_X_not_win_if_only_one_x_on_field() {
+    public void let_X_not_win_if_only_one_field_is_filled() {
         SpielfeldStatus status = new SpielfeldStatus(asList('X'));
+
+        assertFalse(status.xWins());
+    }
+
+    @Test
+    public void let_X_not_win_if_only_two_fields_are_filled() {
+        SpielfeldStatus status = new SpielfeldStatus(asList('X','X'));
 
         assertFalse(status.xWins());
     }

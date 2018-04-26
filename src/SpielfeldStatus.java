@@ -1,5 +1,20 @@
+import java.util.List;
+
 public class SpielfeldStatus {
-    public boolean xWins() {
-        return true;
+
+
+    private final List<Object> fields;
+
+
+    public SpielfeldStatus(List<Object> fields) {
+
+        this.fields = fields;
     }
+
+
+    //Methoden
+    public boolean xWins() {
+        return !fields.isEmpty();
+    }
+
 }

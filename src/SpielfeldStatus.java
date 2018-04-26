@@ -14,7 +14,7 @@ public class SpielfeldStatus {
 
     //Methoden
     public boolean xWins() {
-        return !fields.isEmpty();
+        return fields.size() > 1;
     }
 
 }

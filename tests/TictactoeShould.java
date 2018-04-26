@@ -43,6 +43,16 @@ public class TictactoeShould {
         assertFalse(status.xWins());
     }
 
+    @Test
+    public void let_X_not_win_if_field_is_full_with_o() {
+        SpielfeldStatus status = new SpielfeldStatus(asList(
+                'O','O','O',
+                'O','O','O',
+                'O','O','O'
+                ));
+        assertFalse(status.xWins());
+    }
+
 
 
 

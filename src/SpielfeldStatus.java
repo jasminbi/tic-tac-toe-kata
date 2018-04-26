@@ -14,6 +14,9 @@ public class SpielfeldStatus {
 
     //Methoden
     public boolean xWins() {
+        if (!fields.contains('X')) {
+            return false;
+        }
         return fields.size() > 2;
     }
 

@@ -15,9 +15,9 @@ public class TictactoeShould {
     public void let_X_not_win_on_empty_field() {
         //arrange (given)
         SpielfeldStatus status = new SpielfeldStatus(asList(
-                '*','*','*',
-                '*','*','*',
-                '*','*','*'
+                '*', '*', '*',
+                '*', '*', '*',
+                '*', '*', '*'
         ));
 
         //act (when)
@@ -26,22 +26,40 @@ public class TictactoeShould {
         assertFalse(status.xWins());
     }
 
+
+    // add other "row" cases and diagonal cases?
+
     @Test
     public void let_X_win_if_3_X_in_a_row() {
         SpielfeldStatus status = new SpielfeldStatus(asList(
-                'X','X','X',
-                '*','*','*',
-                '*','*','*'));
+                'X', 'X', 'X',
+                '*', '*', '*',
+                '*', '*', '*'));
 
         assertTrue(status.xWins());
     }
 
     @Test
+    public void let_X_not_win_if_3_X_not_in_row() {
+        SpielfeldStatus status = new SpielfeldStatus(asList(
+                'X', 'X', '*',
+                '*', '*', 'X',
+                '*', '*', '*'));
+
+        assertFalse(status.xWins());
+
+    }
+
+
+
+    //one x could be at another position... Say max. 8 'x' in list?
+
+    @Test
     public void let_X_not_win_if_only_one_field_is_filled() {
         SpielfeldStatus status = new SpielfeldStatus(asList(
-                'X','*','*',
-                '*','*','*',
-                '*','*','*'
+                'X', '*', '*',
+                '*', '*', '*',
+                '*', '*', '*'
         ));
         assertFalse(status.xWins());
     }
@@ -49,9 +67,9 @@ public class TictactoeShould {
     @Test
     public void let_X_not_win_if_only_two_fields_are_filled() {
         SpielfeldStatus status = new SpielfeldStatus(asList(
-                'X','X','*',
-                '*','*','*',
-                '*','*','*'
+                'X', 'X', '*',
+                '*', '*', '*',
+                '*', '*', '*'
         ));
 
         assertFalse(status.xWins());
@@ -60,16 +78,12 @@ public class TictactoeShould {
     @Test
     public void let_X_not_win_if_field_is_full_with_o() {
         SpielfeldStatus status = new SpielfeldStatus(asList(
-                'O','O','O',
-                'O','O','O',
-                'O','O','O'
-                ));
+                'O', 'O', 'O',
+                'O', 'O', 'O',
+                'O', 'O', 'O'
+        ));
         assertFalse(status.xWins());
     }
-
-
-
-
 
 
 }

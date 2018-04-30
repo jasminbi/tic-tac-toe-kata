@@ -18,15 +18,18 @@ public class SpielfeldStatus {
         for (Character field : fields) {
             if (field.equals('X')) {
                 countX += 1;
+                if (countX > 2) {
+                    return true;
+                }
+            } else {
+                countX = 0;
             }
-
         }
 
-        return countX > 2;
+        return false;
 
 
     }
-
 
 
 }

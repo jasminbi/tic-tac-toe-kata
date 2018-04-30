@@ -26,7 +26,8 @@ public class SpielfeldStatus {
             }
         }
 
-        return false;
+        return (fields.get(0) == 'X' && fields.get(3) == 'X' && fields.get(6) == 'X')
+                || (fields.get(1) == 'X' && fields.get(4) == 'X' && fields.get(7) == 'X');
 
 
     }
